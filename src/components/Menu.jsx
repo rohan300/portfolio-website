@@ -28,10 +28,10 @@ export const Menu = (props) => {
         ${menuOpened ? "w-full md:w-80" : "w-0"}`}
         >
           <div className="flex-1 flex items-start justify-center flex-col gap-6 p-8">
-            <MenuButton label="About" onClick={() => onSectionChange(0)} />
-            <MenuButton label="Work" onClick={() => onSectionChange(1)} />
-            <LinkButton label="projects" onClick={() => onSectionChange(3.4)}/>
-            <LinkButton label="Contact" onClick={() => onSectionChange(4.7)}/>
+            <MenuButton label="About" setMenuOpened = {setMenuOpened} onClick={() => onSectionChange(0)} />
+            <MenuButton label="Work" setMenuOpened = {setMenuOpened} onClick={() => onSectionChange(1)} />
+            <MenuButton label="Projects" setMenuOpened = {setMenuOpened} onClick={() => onSectionChange(3.4)}/>
+            <MenuButton label="Contact" setMenuOpened = {setMenuOpened} onClick={() => onSectionChange(4.7)}/>
           </div>
         </div>
       </>
@@ -39,10 +39,20 @@ export const Menu = (props) => {
   };
   
   const MenuButton = (props) => {
-    const { label, onClick } = props;
+    const { label, setMenuOpened, onClick } = props;
+    console.log(setMenuOpened);
+    function handleClick() {
+      onClick();
+  
+      // Close menu if on mobile
+      if(window.innerWidth < 768) {
+        console.log("Closing menu");
+        setMenuOpened(false);
+      }
+    }
     return (
       <button
-        onClick={onClick}
+        onClick={handleClick}
         className="text-2xl text-[#434343] font-bold cursor-pointer hover:text-[#915EFF] transition-colors"
       >
         {label}
