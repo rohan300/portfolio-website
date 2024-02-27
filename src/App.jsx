@@ -13,6 +13,16 @@ function App() {
   const [menuOpened, setMenuOpened] = useState(false);
   const [nameSection, setNameSection] = useState("about");
 
+  let pages = 6;
+
+  if (window.innerWidth < 770) {
+  pages = Math.round((6280 / window.innerHeight) * 10) / 10;
+  }
+  else if (window.innerWidth < 1050) {
+    pages = Math.round((5800 / window.innerHeight) * 10) / 10;
+  }
+
+
   return (
     <>
     <MotionConfig transition={{ 
@@ -24,8 +34,7 @@ function App() {
       restDelta: 0.0001,
     }} >
     <Canvas shadows camera={{ position: [0, 3, 10], fov: 42 }}>
-      
-      <ScrollControls pages={6} damping={0.1}>
+      <ScrollControls pages={pages} damping={0.1}>
         <Scroll>
       <Experience section = {section} menuOpened = {menuOpened} />
       </Scroll>

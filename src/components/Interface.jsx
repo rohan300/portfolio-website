@@ -54,7 +54,7 @@ export const Interface = (props) => {
     <About setSection = {section}/>
     <Work />
     <Projects />
-    <div className="relative z-0 w-auto h-auto overflow-y-scroll">
+    <div>
     <Contact />
     </div>
     </div>
