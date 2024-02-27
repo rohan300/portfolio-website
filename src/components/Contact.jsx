@@ -118,7 +118,7 @@ const Contact = () => {
           <button
             type='submit'
             className={`bg-[#915EFF] text-white py-4 px-8 
-        rounded-lg font-bold text-lg mt-8`}
+        rounded-lg font-bold text-lg mt-2`}
           >
             {/* {loading ? "Sending..." : "Send"} */}
             Send
