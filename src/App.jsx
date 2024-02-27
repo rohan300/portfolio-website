@@ -16,7 +16,7 @@ function App() {
   let pages = 6;
 
   if (window.innerWidth < 770) {
-  pages = Math.round((6280 / window.innerHeight) * 10) / 10;
+  pages = Math.round((6020 / window.innerHeight) * 10) / 10;
   }
   else if (window.innerWidth < 1050) {
     pages = Math.round((5800 / window.innerHeight) * 10) / 10;
