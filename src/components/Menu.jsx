@@ -61,9 +61,19 @@ export const Menu = (props) => {
   };
 
   const LinkButton = (props) => {
-    const {label, onClick} = props;
+    const { label, setMenuOpened, onClick } = props;
+    console.log(setMenuOpened);
+    function handleClick() {
+      onClick();
+  
+      // Close menu if on mobile
+      if(window.innerWidth < 768) {
+        console.log("Closing menu");
+        setMenuOpened(false);
+      }
+    }
     return (
-      <a href = {`#${label}`} onClick={onClick}
+      <a href = {`#${label}`} onClick={handleClick}
         className="text-2xl text-[#434343] font-bold cursor-pointer hover:text-[#915EFF] transition-colors"
       >
         {label.charAt(0).toUpperCase()
