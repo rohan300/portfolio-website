@@ -28,10 +28,10 @@ export const Menu = (props) => {
         ${menuOpened ? "w-full md:w-80" : "w-0"}`}
         >
           <div className="flex-1 flex items-start justify-center flex-col gap-6 p-8">
-            <MenuButton label="About" setMenuOpened = {setMenuOpened} onClick={() => onSectionChange(0)} />
-            <MenuButton label="Work" setMenuOpened = {setMenuOpened} onClick={() => onSectionChange(1)} />
-            <MenuButton label="Projects" setMenuOpened = {setMenuOpened} onClick={() => onSectionChange(3.4)}/>
-            <MenuButton label="Contact" setMenuOpened = {setMenuOpened} onClick={() => onSectionChange(4.7)}/>
+            <LinkButton label="about" setMenuOpened = {setMenuOpened} onClick={() => onSectionChange(0)} />
+            <LinkButton label="work" setMenuOpened = {setMenuOpened} onClick={() => onSectionChange(1)} />
+            <LinkButton label="projects" setMenuOpened = {setMenuOpened} onClick={() => onSectionChange(3.4)}/>
+            <LinkButton label="contact" setMenuOpened = {setMenuOpened} onClick={() => onSectionChange(4.7)}/>
           </div>
         </div>
       </>
