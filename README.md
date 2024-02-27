@@ -1,5 +1,5 @@
-# r3f-vite-starter
-A boilerplate to build R3F projects
+# Portfolio Website
+Build for my portfolio website. Made using ReactJS, ThreeJS and Tailwind CSS.
 
 ```
 yarn
